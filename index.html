@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KL University Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>KL University</h1>
+            <p>Student Portal</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Fees</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard-welcome">
+            <h2>Welcome Back, Student Name!</h2>
+            <p>Your current academic status and quick links are below.</p>
+        </section>
+
+        <section class="login-card">
+            <h3>Portal Login</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="regId">Registration ID</label>
+                    <input type="text" id="regId" name="regId" required placeholder="e.g., 2000100123">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+            <p class="forgot-link"><a href="#">Forgot Password?</a></p>
+        </section>
+        
+        <section class="info-cards-grid">
+            <div class="info-card">
+                <h4>Current CGPA</h4>
+                <p class="large-data">8.54</p>
+            </div>
+            <div class="info-card">
+                <h4>Next Class</h4>
+                <p class="large-data">DBMS (C-101)</p>
+            </div>
+            <div class="info-card">
+                <h4>Attendance</h4>
+                <p class="large-data status-good">92%</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 KL University Student Services. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

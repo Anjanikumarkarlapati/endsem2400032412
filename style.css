@@ -1,0 +1,222 @@
+/* --- 1. Global Reset and Variables --- */
+:root {
+    --klu-blue: #004d99; /* A professional blue, like KL's official color */
+    --klu-light-blue: #007bff;
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-light: #f8f9fa;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- 2. Header and Navigation Styling (Layout & Basic Styling Commit) --- */
+.main-header {
+    background-color: var(--klu-blue);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- 3. Main Content Layout --- */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    gap: 20px;
+    /* Responsive Grid Layout */
+    grid-template-areas: 
+        "welcome welcome"
+        "login card-grid";
+    grid-template-columns: 1fr 2fr;
+}
+
+.dashboard-welcome {
+    grid-area: welcome;
+    padding: 1.5rem;
+    background: #fff;
+    border-left: 5px solid var(--klu-light-blue);
+    box-shadow: var(--shadow-light);
+}
+
+/* --- 4. Login Card Styling (Specific Component Polish Commit) --- */
+.login-card {
+    grid-area: login;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h3 {
+    text-align: center;
+    color: var(--klu-blue);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--klu-light-blue);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    background-color: var(--klu-light-blue);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.forgot-link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.forgot-link a {
+    color: var(--klu-blue);
+    text-decoration: none;
+}
+
+/* --- 5. Info Cards Grid --- */
+.info-cards-grid {
+    grid-area: card-grid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.info-card h4 {
+    color: var(--klu-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.large-data {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.status-good {
+    color: #28a745; /* Green for good status */
+}
+
+/* --- 6. Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--klu-blue);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+/* --- 7. Responsive Adjustments (for smaller screens) --- */
+@media (max-width: 900px) {
+    .container {
+        /* Stack the sections vertically on smaller screens */
+        grid-template-areas: 
+            "welcome"
+            "login"
+            "card-grid";
+        grid-template-columns: 1fr;
+    }
+
+    .info-cards-grid {
+        /* Allow cards to wrap on very small screens */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav {
+        margin-top: 1rem;
+    }
+}
