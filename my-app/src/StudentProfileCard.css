@@ -1,0 +1,47 @@
+/* General styling */
+.card-container {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.profile-card {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  align-items: center; /* Works for both vertical and horizontal centering */
+
+  /* Default to mobile (vertical) layout */
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f0f0;
+}
+
+.profile-details h2 {
+  margin-top: 0;
+}
+
+.profile-details p {
+  margin: 8px 0;
+  color: #555;
+}
+
+/* Apply horizontal layout for screens wider than 768px */
+@media (min-width: 769px) {
+  .profile-card {
+    flex-direction: row;
+    text-align: left;
+  }
+}

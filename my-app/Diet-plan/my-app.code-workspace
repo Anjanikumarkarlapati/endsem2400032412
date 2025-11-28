@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../html"
+		},
+		{
+			"path": "../../OneDrive/Desktop/HTML"
+		},
+		{
+			"path": "../../../../project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project"
+	}
+}
